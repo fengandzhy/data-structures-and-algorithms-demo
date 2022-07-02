@@ -10,6 +10,7 @@
     <modules>
         <module>structure-algorithms_linked-list</module>
         <module>structure-algorithms_sparse-array</module>
+        <module>structure-algorithms_circle-queue</module>
     </modules>
     <packaging>pom</packaging>
 
