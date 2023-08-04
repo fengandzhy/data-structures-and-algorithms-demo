@@ -11,6 +11,7 @@
         <module>linked-list</module>
         <module>sparse-array</module>
         <module>circle-queue</module>
+        <module>queue</module>
     </modules>
     <packaging>pom</packaging>
 
