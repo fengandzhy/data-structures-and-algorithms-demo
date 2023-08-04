@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>structure-algorithms_sparse-array</artifactId>
+    <artifactId>sparse-array</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

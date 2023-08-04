@@ -8,9 +8,9 @@
     <artifactId>structure-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>structure-algorithms_linked-list</module>
-        <module>structure-algorithms_sparse-array</module>
-        <module>structure-algorithms_circle-queue</module>
+        <module>linked-list</module>
+        <module>sparse-array</module>
+        <module>circle-queue</module>
     </modules>
     <packaging>pom</packaging>
 
