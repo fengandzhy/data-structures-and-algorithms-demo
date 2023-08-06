@@ -1,5 +1,8 @@
 package org.zhouhy.structure.algorithms.circle.queue.demo02;
 
+/**
+ * 这里的
+ * */
 public class SimpleQueue {
     private int[] arr;
     private int begin;
