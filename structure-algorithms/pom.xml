@@ -12,6 +12,7 @@
         <module>sparse-array</module>
         <module>circle-queue</module>
         <module>queue</module>
+        <module>management-tree</module>
     </modules>
     <packaging>pom</packaging>
 
