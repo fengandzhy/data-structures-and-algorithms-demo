@@ -3,15 +3,16 @@ package org.zhouhy.structure.algorithms.management.tree.demo01;
 import java.util.*;
 
 public class ManagementTree {
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee(10, "Tom", 0));
-        employees.add(new Employee(2, "Mickey", 10));
-        employees.add(new Employee(3, "Jerry", 10));
-        employees.add(new Employee(7, "John", 2));
-        employees.add(new Employee(5, "Sarah", 10));
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(new Employee(10, "Tom", 0));
+        employeeList.add(new Employee(2, "Mickey", 10));
+        employeeList.add(new Employee(3, "Jerry", 10));
+        employeeList.add(new Employee(7, "John", 2));
+        employeeList.add(new Employee(5, "Sarah", 10));
 
-        displayManagementTree(employees);
+        displayManagementTree(employeeList);
     }
 
     public static void displayManagementTree(List<Employee> employees) {

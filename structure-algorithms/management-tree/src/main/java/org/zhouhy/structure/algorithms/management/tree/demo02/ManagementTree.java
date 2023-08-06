@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ManagementTree {
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee(10, "Tom", 0));
@@ -21,7 +22,7 @@ public class ManagementTree {
         // Populate managerToEmployees map
         for (Employee emp : employees) {
             managerToEmployees.putIfAbsent(emp.managerId, new ArrayList<>());
-            managerToEmployees.get(emp.managerId).add(emp);            ;
+            managerToEmployees.get(emp.managerId).add(emp);
             managerToEmployees.put(emp.managerId, managerToEmployees.get(emp.managerId).stream().sorted(Comparator.comparing(Employee::getName)).collect(Collectors.toList()));
         }
 
