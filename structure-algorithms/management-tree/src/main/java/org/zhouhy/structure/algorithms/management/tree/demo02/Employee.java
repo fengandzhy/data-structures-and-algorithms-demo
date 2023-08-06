@@ -1,5 +1,6 @@
 package org.zhouhy.structure.algorithms.management.tree.demo02;
 
+@SuppressWarnings("unused")
 public class Employee {
     int id;
     String name;
@@ -11,6 +12,7 @@ public class Employee {
         this.managerId = managerId;
     }
 
+    
     public int getId() {
         return id;
     }
