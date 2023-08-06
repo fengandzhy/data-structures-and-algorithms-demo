@@ -1,4 +1,4 @@
-package org.zhouhy.structure.algorithms.circle.queue.demo01;
+package org.zhouhy.structure.algorithms.management.tree.demo02;
 
 import java.util.*;
 import java.util.stream.Collectors;
