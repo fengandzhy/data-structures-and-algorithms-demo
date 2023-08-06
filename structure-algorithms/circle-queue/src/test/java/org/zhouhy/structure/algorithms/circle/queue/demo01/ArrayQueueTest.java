@@ -95,7 +95,10 @@ public class ArrayQueueTest {
         System.out.println();
         arrayQueue.pop();
         arrayQueue.pop();
+        arrayQueue.pop();
+        arrayQueue.showQueue();
         arrayQueue.push(4);
+        System.out.println();
         arrayQueue.showQueue();
     }
 }

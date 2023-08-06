@@ -93,7 +93,7 @@ public class SimpleQueueTest {
         simpleQueue.showQueue();
         simpleQueue.pop();
         simpleQueue.pop();
-        simpleQueue.push(4);
-        simpleQueue.showQueue();        
+        simpleQueue.pop();
+        simpleQueue.showQueue();
     }
 }

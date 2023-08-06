@@ -56,6 +56,10 @@ public class ArrayQueue {
     }
 
     public void showQueue() {
+        if(isEmpty()){
+            System.out.println("no elements in the queue");
+            return;
+        }
         if(rear < front ){
             for (int i = front; i < array.length; i++) {
                 System.out.printf("arr[%d]=%d\n", i, array[i]);
