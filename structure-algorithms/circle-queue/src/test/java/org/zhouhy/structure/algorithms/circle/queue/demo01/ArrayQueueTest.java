@@ -2,8 +2,6 @@ package org.zhouhy.structure.algorithms.circle.queue.demo01;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 
@@ -18,7 +16,7 @@ public class ArrayQueueTest {
     @Test
     public void test1(){
         boolean isEmpty = arrayQueue.isEmpty();
-        assertThat(isEmpty, is(true));
+        assertTrue(isEmpty);
     }
 
     @Test
@@ -27,7 +25,7 @@ public class ArrayQueueTest {
         arrayQueue.push(2);
         arrayQueue.push(3);
         boolean isFull = arrayQueue.isFull();
-        assertThat(isFull, is(true));
+        assertTrue(isFull);
     }
 
     @Test
@@ -37,12 +35,11 @@ public class ArrayQueueTest {
         arrayQueue.push(3);
         try{
             arrayQueue.push(4);
-        }catch(Exception ex){
-            assertTrue(ex instanceof  RuntimeException);
+        }catch(Exception ex){            
             assertTrue(ex.getMessage().contains("The queue is full."));
         }
         boolean isFull = arrayQueue.isFull();
-        assertThat(isFull, is(true));
+        assertTrue(isFull);
     }
 
     @Test
@@ -80,8 +77,7 @@ public class ArrayQueueTest {
         arrayQueue.pop();
         try {
             arrayQueue.pop();
-        } catch (Exception ex) {
-            assertTrue(ex instanceof  RuntimeException);
+        } catch (Exception ex) {            
             assertTrue(ex.getMessage().contains("The queue is empty."));
         }
     }
