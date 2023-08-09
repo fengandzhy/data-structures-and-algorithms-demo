@@ -1,7 +1,10 @@
 package org.zhouhy.structure.algorithms.linkedlist.single.demo02;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
+
+import static org.junit.Assert.assertTrue;
 
 public class OrderedSingleLinkedListTest {
     
@@ -22,5 +25,18 @@ public class OrderedSingleLinkedListTest {
         orderedSingleLinkedList.add(node1);
         
         orderedSingleLinkedList.print();
+    }
+    
+    @Test
+    public void testExists(){
+        OrderedSingleLinkedList orderedSingleLinkedList = new OrderedSingleLinkedList();
+
+        HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
+        HeroNode node2 = new HeroNode(1,"宋江", "及时雨");
+        orderedSingleLinkedList.add(node1);
+        
+        RuntimeException runtimeException = Assert.assertThrows(RuntimeException.class ,()-> orderedSingleLinkedList.add(node2));
+        assertTrue(runtimeException.getMessage().contains("The node has already existed."));
+
     }
 }
