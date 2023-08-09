@@ -1,4 +1,4 @@
-package org.zhouhy.structure.algorithms.linkedlist.single.demo01;
+package org.zhouhy.structure.algorithms.linkedlist.single;
 
 public class HeroNode {
     private int number;

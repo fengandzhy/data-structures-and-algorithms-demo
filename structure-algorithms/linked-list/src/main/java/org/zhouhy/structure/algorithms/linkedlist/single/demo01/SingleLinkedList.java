@@ -1,10 +1,11 @@
 package org.zhouhy.structure.algorithms.linkedlist.single.demo01;
 
 import com.sun.istack.internal.NotNull;
+import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
 
 public class SingleLinkedList {
     
-    private HeroNode header = new HeroNode(0,"", "");
+    protected HeroNode header = new HeroNode(0,"", "");
     
     public void add(@NotNull HeroNode node){
         HeroNode temp = header;
