@@ -16,7 +16,7 @@ public class ArrayQueue {
     }
 
     public boolean isFull() {
-        return rear + 1 == front || rear - front == array.length - 1;
+        return moveToNext(rear) == front;
     }
 
     public void push(int value) {        
@@ -25,12 +25,10 @@ public class ArrayQueue {
         }
         if (rear == -1 && front == -1) {
             rear = 0;
-            front = 0;                              
-        } else if (rear == array.length - 1) {
-            rear = 0;
-        } else {
-            rear++;
-        }
+            front = 0;             
+        }else{
+            rear = moveToNext(rear);
+        }        
         array[rear] = value;
     }
 
@@ -44,15 +42,10 @@ public class ArrayQueue {
             rear = -1;
             front = -1;
             return array[returnValueIndex];
-        } else if (front == array.length - 1) {
-            returnValueIndex = front;
-            front = 0;
-            return array[returnValueIndex];
-        } else {
-            returnValueIndex = front;
-            front++;
-            return array[returnValueIndex];
         }
+        returnValueIndex = front;
+        front = moveToNext(front);
+        return array[returnValueIndex];        
     }
 
     public void showQueue() {
@@ -73,5 +66,13 @@ public class ArrayQueue {
             }
         }
         
+    }
+    
+    private int moveToNext(int index){
+        int next = index;
+        if(next == array.length -1){
+            return 0;
+        }
+        return ++next;
     }
 }
