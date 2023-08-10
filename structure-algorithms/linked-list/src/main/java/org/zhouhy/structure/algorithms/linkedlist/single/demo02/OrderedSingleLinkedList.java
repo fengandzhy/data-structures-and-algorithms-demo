@@ -159,4 +159,16 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
             System.out.println(nodeList.get(i));
         }
     }
+    
+    public void mergeTwoOrderedSingleLinkedList(@NotNull OrderedSingleLinkedList orderedSingleLinkedList){
+        int length = orderedSingleLinkedList.size();
+        List<HeroNode> nodeList = new ArrayList<>();
+        for(int i=0; i<length;i++){
+            nodeList.add(orderedSingleLinkedList.get(i));
+        }
+        for(HeroNode node: nodeList){
+            node.setNext(null);
+            this.add(node);
+        }
+    }
 }

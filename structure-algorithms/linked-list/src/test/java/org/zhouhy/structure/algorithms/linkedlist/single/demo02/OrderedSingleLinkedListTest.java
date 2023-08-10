@@ -1,5 +1,6 @@
 package org.zhouhy.structure.algorithms.linkedlist.single.demo02;
 
+import com.sun.istack.internal.NotNull;
 import org.junit.Assert;
 import org.junit.Test;
 import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
@@ -238,5 +239,44 @@ public class OrderedSingleLinkedListTest {
         orderedSingleLinkedList.add(node10);
         
         orderedSingleLinkedList.printFromEnd();
+    }
+    
+    @Test
+    public void testMergeTwoOrderedSingleLinkedList(){
+        OrderedSingleLinkedList orderedSingleLinkedList1 = new OrderedSingleLinkedList();
+        OrderedSingleLinkedList orderedSingleLinkedList2 = new OrderedSingleLinkedList();
+
+        HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
+        HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
+        HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
+        HeroNode node5 = new HeroNode(5,"关胜", "大刀");
+        HeroNode node6 = new HeroNode(6,"林冲", "豹子头");
+        HeroNode node7 = new HeroNode(7,"秦明", "霹雳火");
+        HeroNode node8 = new HeroNode(8,"呼延灼", "双鞭");
+        HeroNode node9 = new HeroNode(9,"花荣", "小李广");
+        HeroNode node10 = new HeroNode(10,"柴进", "小旋风");
+
+        orderedSingleLinkedList1.add(node1);
+        orderedSingleLinkedList1.add(node3);
+        orderedSingleLinkedList1.add(node5);
+        orderedSingleLinkedList1.add(node7);
+        orderedSingleLinkedList1.add(node9);
+
+        orderedSingleLinkedList2.add(node2);
+        orderedSingleLinkedList2.add(node4);
+        orderedSingleLinkedList2.add(node6);
+        orderedSingleLinkedList2.add(node8);
+        orderedSingleLinkedList2.add(node10);
+        
+        orderedSingleLinkedList1.mergeTwoOrderedSingleLinkedList(orderedSingleLinkedList2);
+
+        assertEquals("柴进",orderedSingleLinkedList1.getNodeByLastNumber(1).getName());
+        assertEquals("花荣",orderedSingleLinkedList1.getNodeByLastNumber(2).getName());
+
+        assertEquals("宋江",orderedSingleLinkedList1.get(0).getName());
+        assertEquals("卢俊义",orderedSingleLinkedList1.get(1).getName());
+        
+        orderedSingleLinkedList1.print();
     }
 }
