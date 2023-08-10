@@ -1,9 +1,9 @@
-package org.zhouhy.structure.algorithms.linkedlist.single.demo02;
+package org.frank.structure.algorithms.linkedlist.single.demo02;
 
 import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
-import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
-import org.zhouhy.structure.algorithms.linkedlist.single.demo01.SingleLinkedList;
+import org.frank.structure.algorithms.linkedlist.single.HeroNode;
+import org.frank.structure.algorithms.linkedlist.single.demo01.SingleLinkedList;
 
 import java.util.ArrayList;
 import java.util.List;
