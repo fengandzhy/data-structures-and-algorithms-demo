@@ -1,7 +1,7 @@
-package org.zhouhy.structure.algorithms.linkedlist.single.demo01;
+package org.frank.structure.algorithms.linkedlist.single.demo01;
 
 import com.sun.istack.internal.NotNull;
-import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
+import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 
 public class SingleLinkedList {
     

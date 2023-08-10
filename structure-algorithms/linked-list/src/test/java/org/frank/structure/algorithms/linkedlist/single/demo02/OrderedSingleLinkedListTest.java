@@ -1,8 +1,8 @@
-package org.zhouhy.structure.algorithms.linkedlist.single.demo02;
+package org.frank.structure.algorithms.linkedlist.single.demo02;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
+import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 
 import static org.junit.Assert.*;
 

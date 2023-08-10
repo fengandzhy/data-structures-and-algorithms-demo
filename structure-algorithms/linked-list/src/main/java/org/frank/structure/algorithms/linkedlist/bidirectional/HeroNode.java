@@ -1,10 +1,12 @@
-package org.zhouhy.structure.algorithms.linkedlist.single;
+package org.frank.structure.algorithms.linkedlist.bidirectional;
 
 public class HeroNode {
     private int number;
     private String name;
     private String nickName;
     private HeroNode next;
+    
+    private HeroNode pre;
     
     public HeroNode(int number, String name, String nickName){
         this.number = number;
@@ -42,6 +44,14 @@ public class HeroNode {
 
     public void setNext(HeroNode next) {
         this.next = next;
+    }
+
+    public HeroNode getPre() {
+        return pre;
+    }
+
+    public void setPre(HeroNode pre) {
+        this.pre = pre;
     }
 
     @Override

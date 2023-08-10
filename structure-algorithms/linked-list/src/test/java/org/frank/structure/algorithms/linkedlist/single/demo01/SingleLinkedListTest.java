@@ -1,10 +1,10 @@
-package org.zhouhy.structure.algorithms.linkedlist.single.demo01;
+package org.frank.structure.algorithms.linkedlist.single.demo01;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
+import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 
 public class SingleLinkedListTest {
 
