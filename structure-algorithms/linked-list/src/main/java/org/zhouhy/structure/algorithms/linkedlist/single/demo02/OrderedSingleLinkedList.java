@@ -56,11 +56,45 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
             temp = temp.getNext();
             if(temp.getNumber() == number){
                 isExist = true;
+                break;
             }
         }
         if(isExist){
             return temp;
         }
         return null;
+    }
+    
+    public void deleteByNumber(int number){
+        HeroNode temp = header;
+        boolean isExist = false;
+        while(true){
+            if(temp.getNext() == null){
+                break;
+            }
+            if(temp.getNext().getNumber() == number){
+                isExist = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if(isExist){
+            temp.setNext(temp.getNext().getNext());
+        }else {
+            throw new RuntimeException("No such node.");
+        }
+    }
+    
+    public int size(){
+        HeroNode temp = header;
+        int size =0;
+        while(true){
+            if(temp.getNext() == null){
+                break;
+            }
+            temp = temp.getNext();
+            size ++;
+        }
+        return size;
     }
 }
