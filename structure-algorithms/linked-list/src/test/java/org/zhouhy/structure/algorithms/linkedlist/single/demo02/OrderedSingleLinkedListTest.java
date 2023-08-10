@@ -130,6 +130,9 @@ public class OrderedSingleLinkedListTest {
         assertEquals(8, orderedSingleLinkedList.size());
     }
 
+    /**
+     * 新浪面试题, 查找一个链表的倒数第几个元素
+     * */
     @Test
     public void testGetNodeByLastNumber(){
         OrderedSingleLinkedList orderedSingleLinkedList = new OrderedSingleLinkedList();
@@ -163,5 +166,45 @@ public class OrderedSingleLinkedListTest {
         } catch (Exception ex) {
             assertTrue(ex.getMessage().contains("Out of the List size."));
         }
+    }
+
+    /**
+     * 单向链表腾讯面试题, 把一个单向链表反转一下
+     * */
+    @Test
+    public void testReverse(){
+        OrderedSingleLinkedList orderedSingleLinkedList = new OrderedSingleLinkedList();
+
+        HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
+        HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
+        HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
+        HeroNode node5 = new HeroNode(5,"关胜", "大刀");
+        HeroNode node6 = new HeroNode(6,"林冲", "豹子头");
+        HeroNode node7 = new HeroNode(7,"秦明", "霹雳火");
+        HeroNode node8 = new HeroNode(8,"呼延灼", "双鞭");
+        HeroNode node9 = new HeroNode(9,"花荣", "小李广");
+        HeroNode node10 = new HeroNode(10,"柴进", "小旋风");
+
+        orderedSingleLinkedList.add(node1);
+        orderedSingleLinkedList.add(node2);
+        orderedSingleLinkedList.add(node3);
+        orderedSingleLinkedList.add(node4);
+        orderedSingleLinkedList.add(node5);
+        orderedSingleLinkedList.add(node6);
+        orderedSingleLinkedList.add(node7);
+        orderedSingleLinkedList.add(node8);
+        orderedSingleLinkedList.add(node9);
+        orderedSingleLinkedList.add(node10);
+
+        assertEquals("柴进",orderedSingleLinkedList.getNodeByLastNumber(1).getName());
+        assertEquals("花荣",orderedSingleLinkedList.getNodeByLastNumber(2).getName());
+        
+        orderedSingleLinkedList.reverse();
+
+        assertEquals("宋江",orderedSingleLinkedList.getNodeByLastNumber(1).getName());
+        assertEquals("卢俊义",orderedSingleLinkedList.getNodeByLastNumber(2).getName());
+        
+        orderedSingleLinkedList.print();
     }
 }

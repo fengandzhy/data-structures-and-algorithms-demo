@@ -101,7 +101,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         return size;
     }
     
-    @Nullable
+    @NotNull
     public HeroNode getNodeByLastNumber(int number){
         if(number <= 0){
             throw new RuntimeException("Invalid input.");
@@ -112,5 +112,29 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
             throw new RuntimeException("Out of the List size.");
         }
         return this.get(index);
-    } 
+    }
+    
+    public void reverse(){
+        int length = this.size();
+        if(length <= 0){
+            return;
+        }
+        HeroNode[] nodeArray = new HeroNode[length];
+        HeroNode temp = header;
+        int index = length -1;
+        while (true) {
+            if(temp.getNext() != null){
+                nodeArray[index] = temp.getNext();
+                temp = temp.getNext();
+                index --;
+            }else{                              
+                break;
+            }
+        }
+        header.setNext(null); // 要把头节点设成null, 重置头节点
+        for(HeroNode node : nodeArray){
+            node.setNext(null); // 注意这里要把每一个节点的下一节点都设成null
+            super.add(node);
+        }        
+    }
 }
