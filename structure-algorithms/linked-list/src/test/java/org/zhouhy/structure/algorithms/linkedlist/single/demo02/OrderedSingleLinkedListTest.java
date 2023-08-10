@@ -1,6 +1,5 @@
 package org.zhouhy.structure.algorithms.linkedlist.single.demo02;
 
-import com.sun.istack.internal.NotNull;
 import org.junit.Assert;
 import org.junit.Test;
 import org.zhouhy.structure.algorithms.linkedlist.single.HeroNode;
