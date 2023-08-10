@@ -31,6 +31,9 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
 
     @Nullable
     public HeroNode get(int index) {
+        if(index < 0){
+            throw new RuntimeException("Invalid input.");
+        }
         int begin = -1; // 这里的begin 从 header 开始计算，而header不是链表中的值, 所以从-1开始计算
         HeroNode temp = header;
         while (true) {
@@ -97,4 +100,17 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         }
         return size;
     }
+    
+    @Nullable
+    public HeroNode getNodeByLastNumber(int number){
+        if(number <= 0){
+            throw new RuntimeException("Invalid input.");
+        }
+        int size = this.size();
+        int index = size - number;
+        if(index <= 0){
+            throw new RuntimeException("Out of the List size.");
+        }
+        return this.get(index);
+    } 
 }

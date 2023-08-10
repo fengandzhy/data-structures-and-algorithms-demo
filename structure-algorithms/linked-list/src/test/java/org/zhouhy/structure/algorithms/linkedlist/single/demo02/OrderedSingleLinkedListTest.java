@@ -33,7 +33,7 @@ public class OrderedSingleLinkedListTest {
 
         HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
         HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
-        HeroNode node3 = new HeroNode(3,"吴勇", "智多星");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
         HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
         HeroNode node5 = new HeroNode(5,"关胜", "大刀");
         HeroNode node6 = new HeroNode(6,"林冲", "豹子头");
@@ -74,7 +74,7 @@ public class OrderedSingleLinkedListTest {
 
         HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
         HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
-        HeroNode node3 = new HeroNode(3,"吴勇", "智多星");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
         HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
         HeroNode node5 = new HeroNode(5,"关胜", "大刀");
         HeroNode node6 = new HeroNode(6,"林冲", "豹子头");
@@ -101,7 +101,7 @@ public class OrderedSingleLinkedListTest {
 
         HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
         HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
-        HeroNode node3 = new HeroNode(3,"吴勇", "智多星");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
         HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
         HeroNode node5 = new HeroNode(5,"关胜", "大刀");
         HeroNode node6 = new HeroNode(6,"林冲", "豹子头");
@@ -128,5 +128,34 @@ public class OrderedSingleLinkedListTest {
         orderedSingleLinkedList.deleteByNumber(7);
         assertEquals("关胜",orderedSingleLinkedList.getNodeByNumber(5).getName());
         assertEquals(8, orderedSingleLinkedList.size());
+    }
+
+    @Test
+    public void testGetNodeByLastNumber(){
+        OrderedSingleLinkedList orderedSingleLinkedList = new OrderedSingleLinkedList();
+        try {
+            orderedSingleLinkedList.getNodeByLastNumber(0);
+        } catch (Exception ex) {
+            assertTrue(ex.getMessage().contains("Invalid input."));
+        }
+
+        try {
+            orderedSingleLinkedList.getNodeByLastNumber(1);
+        } catch (Exception ex) {
+            assertTrue(ex.getMessage().contains("Out of the List size."));
+        }
+        HeroNode node1 = new HeroNode(1,"宋江", "及时雨");
+        HeroNode node2 = new HeroNode(2,"卢俊义", "玉麒麟");
+        HeroNode node3 = new HeroNode(3,"吴用", "智多星");
+        HeroNode node4 = new HeroNode(4,"公孙胜", "入云龙");
+        HeroNode node5 = new HeroNode(5,"关胜", "大刀");
+        orderedSingleLinkedList.add(node1);
+        orderedSingleLinkedList.add(node2);
+        orderedSingleLinkedList.add(node3);
+        orderedSingleLinkedList.add(node4);
+        orderedSingleLinkedList.add(node5);
+
+        assertEquals("关胜",orderedSingleLinkedList.getNodeByLastNumber(1).getName());
+        assertEquals("吴用",orderedSingleLinkedList.getNodeByLastNumber(3).getName());
     }
 }
