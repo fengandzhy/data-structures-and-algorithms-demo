@@ -125,6 +125,7 @@ public class OrderedSingleLinkedListTest {
         orderedSingleLinkedList.deleteByNumber(10);
         assertEquals(9, orderedSingleLinkedList.size());
         assertEquals("呼延灼",orderedSingleLinkedList.getNodeByNumber(8).getName());
+        orderedSingleLinkedList.deleteByNumber(7);
         assertEquals("关胜",orderedSingleLinkedList.getNodeByNumber(5).getName());
     }
 }
