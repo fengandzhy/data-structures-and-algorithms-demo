@@ -45,4 +45,22 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         }
         return temp;
     }
+    
+    public HeroNode getNodeByNumber(int number){
+        HeroNode temp = header;
+        boolean isExist = false;
+        while(true){
+            if(temp.getNext() == null){
+                break;
+            }
+            temp = temp.getNext();
+            if(temp.getNumber() == number){
+                isExist = true;
+            }
+        }
+        if(isExist){
+            return temp;
+        }
+        return null;
+    }
 }
