@@ -157,5 +157,11 @@ public class OrderedSingleLinkedListTest {
 
         assertEquals("关胜",orderedSingleLinkedList.getNodeByLastNumber(1).getName());
         assertEquals("吴用",orderedSingleLinkedList.getNodeByLastNumber(3).getName());
+
+        try {
+            orderedSingleLinkedList.getNodeByLastNumber(6);
+        } catch (Exception ex) {
+            assertTrue(ex.getMessage().contains("Out of the List size."));
+        }
     }
 }
