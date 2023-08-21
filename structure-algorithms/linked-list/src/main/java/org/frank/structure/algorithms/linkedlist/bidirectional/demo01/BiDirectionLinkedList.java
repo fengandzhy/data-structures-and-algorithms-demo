@@ -87,6 +87,15 @@ public class BiDirectionLinkedList {
         }
         return null;
     }
-    
-    
+
+    public void deleteByNumber(int number) {
+        HeroNode heroNode = getNodeByNumber(number);
+        if(heroNode == null){
+            throw new RuntimeException("No such element.");
+        }
+        HeroNode preNode = heroNode.getPre();
+        HeroNode nextNode = heroNode.getNext();
+        nextNode.setPre(preNode);
+        preNode.setNext(nextNode);       
+    }
 }
