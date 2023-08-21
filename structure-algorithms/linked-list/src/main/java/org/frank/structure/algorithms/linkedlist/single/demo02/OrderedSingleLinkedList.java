@@ -30,6 +30,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         temp.setNext(heroNode);
     }
 
+    @SuppressWarnings("DuplicatedCode")
     @Nullable
     public HeroNode get(int index) {
         if (index < 0) {
