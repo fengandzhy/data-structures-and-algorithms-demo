@@ -16,12 +16,10 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
     public void add(@NotNull HeroNode heroNode) {
         HeroNode temp = header;
         boolean isExist = false;
-        while (true) {
-            if (temp.getNext() == null || temp.getNext().getNumber() > heroNode.getNumber()) {
-                break;
-            }
+        while (temp.getNext() != null && temp.getNext().getNumber() <= heroNode.getNumber()) {
             if (temp.getNext().getNumber() == heroNode.getNumber()) {
                 isExist = true;
+                break;
             }
             temp = temp.getNext();
         }
@@ -32,6 +30,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         temp.setNext(heroNode);
     }
 
+    @SuppressWarnings("DuplicatedCode")
     @Nullable
     public HeroNode get(int index) {
         if (index < 0) {
@@ -39,10 +38,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         }
         int begin = -1; // 这里的begin 从 header 开始计算，而header不是链表中的值, 所以从-1开始计算
         HeroNode temp = header;
-        while (true) {
-            if (begin == index || temp.getNext() == null) {
-                break;
-            }
+        while (begin != index && temp.getNext() != null) {
             begin++;
             temp = temp.getNext();
         }
@@ -94,10 +90,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
     public int size() {
         HeroNode temp = header;
         int size = 0;
-        while (true) {
-            if (temp.getNext() == null) {
-                break;
-            }
+        while (temp.getNext() != null) {
             temp = temp.getNext();
             size++;
         }
@@ -148,10 +141,7 @@ public class OrderedSingleLinkedList extends SingleLinkedList {
         }
         List<HeroNode> nodeList = new ArrayList<>();
         HeroNode temp = header;
-        while (true) {
-            if (temp.getNext() == null) {
-                break;
-            }
+        while (temp.getNext() != null) {
             nodeList.add(temp.getNext());
             temp = temp.getNext();
         }
