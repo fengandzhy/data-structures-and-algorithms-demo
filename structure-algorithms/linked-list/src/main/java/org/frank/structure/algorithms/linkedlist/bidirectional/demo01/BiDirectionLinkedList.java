@@ -66,5 +66,27 @@ public class BiDirectionLinkedList {
             return null;
         }
         return temp;        
-    }   
+    }
+
+    @SuppressWarnings("DuplicatedCode")
+    public HeroNode getNodeByNumber(int number) {
+        HeroNode temp = headNode;
+        boolean isExist = false;
+        while (true) {
+            if (temp.getNext() == null) {
+                break;
+            }
+            temp = temp.getNext();
+            if (temp.getNumber() == number) {
+                isExist = true;
+                break;
+            }
+        }
+        if (isExist) {
+            return temp;
+        }
+        return null;
+    }
+    
+    
 }
