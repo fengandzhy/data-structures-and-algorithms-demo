@@ -26,7 +26,7 @@ public class SingleLinkedList {
         while(true){
             temp = temp.getNext();
             if(temp != null){
-                System.out.println(temp.toString());
+                System.out.println(temp);
             }else{
                 break;
             }

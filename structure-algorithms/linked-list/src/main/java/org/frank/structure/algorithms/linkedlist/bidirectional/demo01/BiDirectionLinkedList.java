@@ -9,12 +9,10 @@ public class BiDirectionLinkedList {
     public void add(HeroNode heroNode){
         HeroNode tempNode = headNode;
         boolean isExist = false;
-        while(true){
-            if(tempNode.getNext() == null){
-                break;
-            }
+        while (tempNode.getNext() != null) {
             if (tempNode.getNext().getNumber() == heroNode.getNumber()) {
                 isExist = true;
+                break;
             }
             tempNode = tempNode.getNext();
         }
@@ -30,10 +28,7 @@ public class BiDirectionLinkedList {
     public int size(){
         int size = 0;
         HeroNode tempNode = headNode;
-        while(true) {
-            if (tempNode.getNext() == null) {
-                break;
-            }
+        while (tempNode.getNext() != null) {
             tempNode = tempNode.getNext();
             size++;
         }
@@ -48,7 +43,7 @@ public class BiDirectionLinkedList {
         while(true){
             temp = temp.getNext();
             if(temp != null){
-                System.out.println(temp.toString());
+                System.out.println(temp);
             }else{
                 break;
             }
