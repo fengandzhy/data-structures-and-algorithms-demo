@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class OrderedSingleLinkedList extends SingleLinkedList {
 
+    @SuppressWarnings("DuplicatedCode")
+    @Override
     public void add(@NotNull HeroNode heroNode) {
         HeroNode temp = header;
         boolean isExist = false;
