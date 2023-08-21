@@ -35,6 +35,7 @@ public class BiDirectionLinkedList {
         return size;
     }
 
+    @SuppressWarnings("DuplicatedCode")
     public void print(){
         HeroNode temp = headNode;
         if(temp.getNext() == null){
@@ -50,7 +51,20 @@ public class BiDirectionLinkedList {
         }
     }
     
-    
-    
-    
+    @SuppressWarnings("DuplicatedCode")
+    public HeroNode get(int index){
+        if (index < 0 || index > size()-1) {
+            throw new RuntimeException("Invalid input.");
+        }
+        int start = -1; 
+        HeroNode temp = headNode;
+        while (start != index && temp.getNext() != null) {
+            start++;
+            temp = temp.getNext();
+        }
+        if (start != index) {
+            return null;
+        }
+        return temp;        
+    }   
 }

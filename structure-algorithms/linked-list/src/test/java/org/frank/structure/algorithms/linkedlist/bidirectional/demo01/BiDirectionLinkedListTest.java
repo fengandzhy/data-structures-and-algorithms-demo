@@ -26,5 +26,10 @@ public class BiDirectionLinkedListTest {
 
         assertEquals(5,biDirectionLinkedList.size());
         biDirectionLinkedList.print();
+        
+        HeroNode node = biDirectionLinkedList.get(2);
+        assertEquals("吴勇",node.getName());
+        assertEquals("公孙胜",node.getNext().getName());
+        assertEquals("卢俊义",node.getPre().getName());
     }
 }
