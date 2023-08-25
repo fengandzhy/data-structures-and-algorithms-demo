@@ -3,6 +3,8 @@ package org.frank.structure.algorithms.linkedlist.single.demo03;
 import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class CycleLinkedListTest {
@@ -74,5 +76,12 @@ public class CycleLinkedListTest {
         cycleLinkedList.add(25);
         assertEquals(25,cycleLinkedList.size());
         assertEquals(25,cycleLinkedList.get(24).getNumber());
+    }
+    
+    @Test
+    public void testJosephusProblem(){
+        CycleLinkedList cycleLinkedList = new CycleLinkedList();
+        cycleLinkedList.add(15);
+        cycleLinkedList.josephusProblem(1,3,new ArrayList<>());
     }
 }
