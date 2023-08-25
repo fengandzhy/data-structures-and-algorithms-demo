@@ -67,4 +67,12 @@ public class CycleLinkedListTest {
         last = cycleLinkedList.getLast();
         assertEquals("秦明", last.getName());
     }
+    
+    @Test
+    public void testAdd(){
+        CycleLinkedList cycleLinkedList = new CycleLinkedList();
+        cycleLinkedList.add(25);
+        assertEquals(25,cycleLinkedList.size());
+        assertEquals(25,cycleLinkedList.get(24).getNumber());
+    }
 }

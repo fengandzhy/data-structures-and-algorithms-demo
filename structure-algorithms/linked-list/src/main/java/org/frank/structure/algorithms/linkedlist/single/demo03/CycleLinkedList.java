@@ -7,39 +7,46 @@ import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 public class CycleLinkedList {
 
     private HeroNode header = null;
-    
-    public void add(HeroNode node){
-        if(header == null){
+
+    public void add(HeroNode node) {
+        if (header == null) {
             header = node;
             node.setNext(header);
             return;
         }
         HeroNode currentNode = header;
-        while(!currentNode.getNext().equals(header)){
+        while (!currentNode.getNext().equals(header)) {
             currentNode = currentNode.getNext();
         }
         currentNode.setNext(node);
         node.setNext(header);
     }
-    
-    public int size(){
+
+    public void add(int number) {
+        for (int i = 1; i <= number; i++) {
+            HeroNode heroNode = new HeroNode(i);
+            this.add(heroNode);
+        }
+    }
+
+    public int size() {
         int size = 0;
         HeroNode currentNode = header;
-        if(currentNode == null){
+        if (currentNode == null) {
             return size;
         }
-        while(true){
+        while (true) {
             size++;
-            if(currentNode.getNext().equals(header)){                
+            if (currentNode.getNext().equals(header)) {
                 break;
             }
             currentNode = currentNode.getNext();
         }
         return size;
     }
-    
+
     @Nullable
-    public HeroNode get(int index){
+    public HeroNode get(int index) {
         if (index < 0) {
             throw new RuntimeException("Invalid input.");
         }
@@ -54,34 +61,35 @@ public class CycleLinkedList {
         }
         return currentNode;
     }
-    
+
     @NotNull
-    public HeroNode getPreNode(@NotNull HeroNode current){
+    public HeroNode getPreNode(@NotNull HeroNode current) {
         HeroNode tempNode = header;
-        while(!tempNode.getNext().equals(current)){
+        while (!tempNode.getNext().equals(current)) {
             tempNode = tempNode.getNext();
         }
         return tempNode;
     }
 
-    public void remove(int index){
+    public void remove(int index) {
         HeroNode current = this.get(index);
-        if(current == header && this.size() == 1){
+        if (current == header && this.size() == 1) {
             header = null;
         }
-        if(current != null){
+        if (current != null) {
             HeroNode preNode = this.getPreNode(current);
             preNode.setNext(current.getNext());
-            if(current == header){
+            if (current == header) {
                 header = current.getNext();
             }
         }
     }
-    
+
+
     @NotNull
-    public HeroNode getLast(){
+    public HeroNode getLast() {
         HeroNode current = header;
-        while(!current.getNext().equals(header)){
+        while (!current.getNext().equals(header)) {
             current = current.getNext();
         }
         return current;

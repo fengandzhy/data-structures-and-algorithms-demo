@@ -11,6 +11,10 @@ public class HeroNode {
         this.name = name;
         this.nickName = nickName;
     }
+    
+    public HeroNode(int number){
+        this.number = number;
+    }
 
     public int getNumber() {
         return number;
