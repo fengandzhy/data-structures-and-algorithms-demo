@@ -28,9 +28,12 @@ public class CycleLinkedList {
         if(currentNode == null){
             return size;
         }
-        while(!currentNode.getNext().equals(header)){
+        while(true){
+            size++;
+            if(currentNode.getNext().equals(header)){                
+                break;
+            }
             currentNode = currentNode.getNext();
-            size ++;
         }
         return size;
     }
@@ -74,7 +77,8 @@ public class CycleLinkedList {
             }
         }
     }
-    
-    
-    
+
+    public HeroNode getHeader() {
+        return header;
+    }
 }
