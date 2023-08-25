@@ -77,6 +77,15 @@ public class CycleLinkedList {
             }
         }
     }
+    
+    @NotNull
+    public HeroNode getLast(){
+        HeroNode current = header;
+        while(!current.getNext().equals(header)){
+            current = current.getNext();
+        }
+        return current;
+    }
 
     public HeroNode getHeader() {
         return header;
