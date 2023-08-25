@@ -32,6 +32,7 @@ public class CycleLinkedList {
     }
 
     public void josephusProblem(int begin, int times, List<HeroNode> list) {
+
         if (header == null || begin < 1 || begin > this.size()) {
             System.out.println("参数输入有误， 请重新输入");
             return;
@@ -39,28 +40,35 @@ public class CycleLinkedList {
         if (this.size() == 1) {
             System.out.printf("最后留在圈中的编号%d \n", header.getNumber());
             return;
-        }
-        print();
-        System.out.println("当前节点是:"+begin);
+        }   
         HeroNode currentNode = this.get(begin - 1);
         for (int i = 1; i < times; i++) {
-            currentNode = currentNode.getNext();
-            begin++;
-            if (begin >= this.size()) {
-                begin = 1;
-            }
-        }
+            currentNode = currentNode.getNext();           
+        }        
         System.out.printf("小孩%d出圈\n", currentNode.getNumber());
+        HeroNode nextNode = currentNode.getNext();
         list.add(currentNode);
         remove(currentNode);
-        josephusProblem(begin, times, list);
+        josephusProblem(getBegin(nextNode), times, list);
+    }
+    
+    public int getBegin(HeroNode nextNode){
+        int index = 1;
+        HeroNode temp = header;
+        while(true){
+            if(temp.equals(nextNode)){
+                break;
+            }
+            index++;
+            temp = temp.getNext();
+        }
+        return index;
     }
     
     public void print(){
         for(int i=0;i<this.size();i++){
             System.out.printf("第%d个节点是%d\n", i+1,this.get(i).getNumber());
-        }
-        System.out.println("******************************************");
+        }        
     }
 
     public int size() {
