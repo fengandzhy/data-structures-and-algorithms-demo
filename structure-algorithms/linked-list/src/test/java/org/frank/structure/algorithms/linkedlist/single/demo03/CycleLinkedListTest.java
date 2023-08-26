@@ -81,7 +81,14 @@ public class CycleLinkedListTest {
     @Test
     public void testJosephusProblem(){
         CycleLinkedList cycleLinkedList = new CycleLinkedList();
-        cycleLinkedList.add(125);
+        cycleLinkedList.add(18);
         cycleLinkedList.josephusProblem(1,3,new ArrayList<>());
+    }
+
+    @Test
+    public void testJosephusProblem2(){
+        CycleLinkedList cycleLinkedList = new CycleLinkedList();
+        cycleLinkedList.add(18);
+        cycleLinkedList.josephusProblem2(1,3,new ArrayList<>());
     }
 }
