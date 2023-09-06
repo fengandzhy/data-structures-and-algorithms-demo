@@ -9,7 +9,7 @@ public class  ArrayStack<T>  {
     public ArrayStack (int maxSize){
         this.top = -1;
         this.maxSize = maxSize;
-        this.stack = (T[])new Object[maxSize];
+        this.stack = (T[])new Object[maxSize]; // 注意这里创建的是一个泛型数组
     }
     
     public boolean isFull(){
