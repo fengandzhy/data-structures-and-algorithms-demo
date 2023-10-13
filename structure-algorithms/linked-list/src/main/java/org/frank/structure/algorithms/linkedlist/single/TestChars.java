@@ -33,8 +33,7 @@ public class TestChars {
     }
     
     public boolean lineWin(CharacterField[][] chars, List<String> strings){
-        for(CharacterField[] lines: chars){
-            
+        for(CharacterField[] lines: chars){            
             for(CharacterField field: lines){
                 strings.add(field.getSign());
             }
