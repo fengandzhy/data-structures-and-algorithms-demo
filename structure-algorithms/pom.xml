@@ -13,6 +13,7 @@
         <module>circle-queue</module>
         <module>queue</module>
         <module>management-tree</module>
+        <module>stack</module>
     </modules>
     <packaging>pom</packaging>
 
