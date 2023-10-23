@@ -4,8 +4,6 @@ import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
 import org.frank.structure.algorithms.linkedlist.single.HeroNode;
 
-import java.util.List;
-
 public class CycleLinkedList {
 
     private HeroNode header = null;
