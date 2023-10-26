@@ -150,8 +150,8 @@ public class CycleLinkedList {
         System.out.printf("英雄%d出圈\n", currentNode.getNumber());
         HeroNode nextNode = currentNode.getNext();
 
-        remove(currentNode);
-//        remove(currentNode, previousNode);
+//        remove(currentNode);
+        remove(currentNode, previousNode);
         josephusProblem(getBegin(nextNode), times);
     }
     //
