@@ -10,8 +10,11 @@ public class ManagementTree {
         employeeList.add(new Employee(2, "Mickey", 10));
         employeeList.add(new Employee(3, "Jerry", 10));
         employeeList.add(new Employee(7, "John", 2));
-        employeeList.add(new Employee(5, "Sarah", 10));
-
+        employeeList.add(new Employee(5, "Sarah", 10));    
+        
+//        for(Employee e: employeeList){
+//            System.out.println(e.name);
+//        }
         displayManagementTree(employeeList);
     }
 
